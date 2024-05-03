@@ -1,11 +1,10 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 
 function TaskDetail({ tasks }) {
   const { taskId } = useParams();
   const task = tasks[taskId];
 
-  if (task.size === 0) {
+  if (Object.keys(task).length === 0) {
     return <div>Task not found</div>;
   }
 

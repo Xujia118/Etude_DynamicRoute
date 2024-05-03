@@ -3,6 +3,7 @@ const app = express();
 
 const tasks = require("./data");
 
+// Send task id in task list
 app.get("/tasks", (req, res) => {
   res.send(`
         <>Task List</
@@ -17,10 +18,11 @@ app.get("/tasks", (req, res) => {
     `);
 });
 
+// Fetch task id in url
 app.get("/tasks/:taskId", (req, res) => {
   const taskId = req.params.taskId;
 
-//   console.log(req.params);
+  //   console.log(req.params);
 
   // Find the task in the database by ID
   const task = tasks[taskId];
